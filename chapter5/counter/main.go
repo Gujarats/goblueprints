@@ -45,7 +45,7 @@ func main() {
 	}()
 	pollData := db.DB("ballots").C("polls")
 
-	var counts map[string]int
+	var counts = make(map[string]int)
 	var countsLock sync.Mutex
 
 	log.Println("Connecting to nsq...")
